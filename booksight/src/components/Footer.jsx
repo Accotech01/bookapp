@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4">reBuk</h3>
-            <p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="text-white">Your Library on the internet</p>
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
