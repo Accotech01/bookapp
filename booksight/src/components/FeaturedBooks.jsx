@@ -1,9 +1,10 @@
-import {React, useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedBooks = () => {
   const [books, setBooks] = useState([]);
+  const navigate = useNavigate();
 
-  // Generate a random search keyword
   const randomKeyword = () => {
     const words = [
       "love",
@@ -29,7 +30,7 @@ const FeaturedBooks = () => {
           `https://openlibrary.org/search.json?q=${keyword}`
         );
         const data = await res.json();
-        setBooks(data.docs.slice(0, 12)); // show 12 random books
+        setBooks(data.docs.slice(0, 12));
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -38,21 +39,25 @@ const FeaturedBooks = () => {
     fetchBooks();
   }, []);
 
-  const getCover = (coverId) => {
-    return coverId
+  const getCover = (coverId) =>
+    coverId
       ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
       : "https://via.placeholder.com/150?text=No+Cover";
-  };
 
   return (
     <div className="p-6">
-      <h1 className='text-center font-bold text-3xl md:text-4xl lg:text-5xl sm:text-3xl text-[#f19595] mb-10'>FEATURED BOOKS</h1>
+      <h1 className="text-center font-bold text-4xl text-[#f19595] mb-10">
+        FEATURED BOOKS
+      </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {books.map((book) => (
           <div
             key={book.key}
-            className="border rounded-xl shadow-md overflow-hidden bg-white"
+            onClick={() =>
+              navigate(`/book/${book.key.replace("/works/", "")}`)
+            }
+            className="border rounded-xl shadow-md overflow-hidden bg-white cursor-pointer hover:scale-105 transition-transform"
           >
             <img
               src={getCover(book.cover_i)}
@@ -74,9 +79,3 @@ const FeaturedBooks = () => {
 };
 
 export default FeaturedBooks;
-
-
-
-
-
-

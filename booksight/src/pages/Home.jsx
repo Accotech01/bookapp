@@ -10,6 +10,7 @@ const Home = () => {
     <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-10' style={{ color: '#F19595' }}>BEAT YOUR READING GOALS, ENJOY THE CULTURE</h1>
     <p className='text-lg mb-8 text-black-600 text-opacity-70'>Find books, keep track of your reading, explore the world of books.</p>
     <div className='flex'>
+    
       <BookSearch />
     <button className='bg-[#F19595] rounded px-3 py-3xl text-2xl text-white-500'>search</button>
     </div>
