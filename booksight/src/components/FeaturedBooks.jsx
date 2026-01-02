@@ -71,6 +71,16 @@ const FeaturedBooks = () => {
                 {book.author_name?.join(", ") || "Unknown Author"}
               </p>
             </div>
+            <button
+  onClick={(e) => {
+    e.stopPropagation();
+    navigate(`/book/${book.key.replace("/works/", "")}/read`);
+  }}
+  className="mt-3 w-full bg-[#F19595] text-white py-2 rounded hover:bg-[#f07c7c]"
+>
+  Read
+</button>
+
           </div>
         ))}
       </div>

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const BookDetails = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -50,6 +54,13 @@ const BookDetails = () => {
               book.description ||
               "No description available."}
           </p>
+          <button
+            onClick={() => navigate(`/book/${id}/read`)}
+            className="mt-6 bg-[#F19595] text-white px-6 py-3 rounded-lg text-lg hover:bg-[#f07c7c]"
+          >
+           📖 Read Book
+          </button>
+
 
           {book.first_publish_date && (
             <p className="text-sm text-gray-600">
