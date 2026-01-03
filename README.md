@@ -85,20 +85,6 @@ Visit:
 
 http://localhost:5173
 
-🧩 Project Structure
-/src
- ├── components
- │   ├── SearchBar.jsx
- │   ├── BookCard.jsx
- │   ├── BookList.jsx
- │   └── BookDetails.jsx
- ├── pages
- │   ├── Home.jsx
- │   └── DetailsPage.jsx
- ├── App.jsx
- ├── main.jsx
- └── index.css
-
 🌐 API Usage
 🔎 Search Books
 https://openlibrary.org/search.json?q=harry+potter
