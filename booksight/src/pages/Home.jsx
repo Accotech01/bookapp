@@ -12,7 +12,6 @@ const Home = () => {
     <div className='flex'>
     
       <BookSearch />
-    <button className='bg-[#F19595] rounded px-3 py-3xl text-2xl text-white-500'>search</button>
     </div>
   </div>
   <div className='hidden md:block md:w-1/2'>
